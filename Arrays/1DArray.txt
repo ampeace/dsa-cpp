@@ -43,23 +43,18 @@ int arr[5] = {10, 20, 30, 40, 50}; // Initializing with values
 Elements in the array are accessed using indices, starting from 0 for the first element. You can access and modify elements using square brackets []. For example:
 
 int value = arr[2]; // Accessing the element at index 2 (30)
-
 arr[3] = 60; // Modifying the element at index 3 to 60
 
-
 --> Performing Basic Operations
-You can perform various operations on arrays, such as searching for an element, sorting the elements, or calculating the sum of all elements. These operations typically involve iterating through the array using loops and applying the necessary logic. For example, to find the sum of all elements in the array:
+To perform various operations on arrays, such as searching for an element, sorting the elements, or calculating the sum of all elements. These operations typically involve iterating through the array using loops and applying the necessary logic. For example, to find the sum of all elements in the array:
 
 int sum = 0;
 
 for (int i = 0; i < 5; i++) {
 
-
-
     sum += arr[i];
 
 }
-
 //This loop iterates through each element of the array and adds it to the sum variable.
 
 --> Dynamic Memory Allocation (Optional)
@@ -75,7 +70,6 @@ Several basic operations can be performed on one-dimensional arrays in C++, each
 
 - Time Complexity: O(1). Since arrays provide constant-time access to elements based on their indices, accessing an element by index takes constant time regardless of the size of the array.
 - Space Complexity: O(1). This operation requires no additional space beyond the memory used by the array itself.
-
 
 -- Modifying an Element by Index
 
