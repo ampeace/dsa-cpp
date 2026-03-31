@@ -76,7 +76,7 @@ Several basic operations can be performed on one-dimensional arrays in C++, each
 - Time Complexity: O(1). Similar to accessing an element, modifying an element by index takes constant time regardless of the size of the array.
 - Space Complexity: O(1). No additional space is required beyond the memory used by the array.
 
--->Insertion/Deletion of an Element
+-->Insertion/Deletion of an Element in 1D Array:
 
 - Time Complexity:
 - Insertion/Deletion at the beginning or middle of the array: O(n). Since shifting elements requires iterating through and potentially moving each element, the time complexity is linearly proportional to the size of the array.
