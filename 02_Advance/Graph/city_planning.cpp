@@ -54,9 +54,9 @@ int main() {
     vector<bool> visited(n, false);
 
     if (dfs(A, B, adj, visited))
-        cout << "✅ Path exists from " << A << " to " << B << endl;
+        cout << " Path exists from " << A << " to " << B << endl;
     else
-        cout << "❌ No path exists from " << A << " to " << B << endl;
+        cout << " No path exists from " << A << " to " << B << endl;
 
     return 0;
 }
