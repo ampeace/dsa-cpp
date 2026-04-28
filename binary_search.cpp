@@ -1,81 +1,41 @@
-//Binary search implementation
- #include <iostream>
+#include <iostream>
 using namespace std;
 
-void insert(int heap[], int &size, int value) {
-    size++;
-    int i = size;
-    heap[i] = value;
+int binarySearch(int arr[], int n, int key)
+{
+    int left = 0, right = n - 1;
 
-    // Heapify up (for MIN heap)
-    while(i > 1 && heap[i] < heap[i/2]) {
-        swap(heap[i], heap[i/2]);
-        i = i / 2;
+    while (left <= right)
+    {
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == key)
+            return mid;
+        else if (arr[mid] < key)
+            left = mid + 1;
+        else
+            right = mid - 1;
     }
+    return -1;
 }
 
-void deleteMin(int heap[], int &size) {
-    if(size == 0) {
-        cout << "Heap is empty\n";
-        return;
-    }
-
-    // Step 1: Replace root with last element
-    heap[1] = heap[size];
-    size--;
-
-    int i = 1;
-
-    // Step 2: Heapify down (MIN heap)
-    while(true) {
-        int left = 2 * i;
-        int right = 2 * i + 1;
-        int smallest = i;
-
-        if(left <= size && heap[left] < heap[smallest])
-            smallest = left;
-
-        if(right <= size && heap[right] < heap[smallest])
-            smallest = right;
-
-        if(smallest != i) {
-            swap(heap[i], heap[smallest]);
-            i = smallest;
-        } else {
-            break;
-        }
-    }
-}
-
-void display(int heap[], int size) {
-    for(int i = 1; i <= size; i++) {
-        cout << heap[i] << " ";
-    }
-    cout << endl;
-}
-
-int main() {
-    int heap[100];
-    int size = 0;
-    int n, x;
-
-    cout << "Enter number of elements: ";
+int main()
+{
+    int n, key;
     cin >> n;
 
-    cout << "Enter elements:\n";
-    for(int i = 0; i < n; i++) {
-        cin >> x;
-        insert(heap, size, x);
-    }
+    int arr[n];
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
 
-    cout << "Min Heap:\n";
-    display(heap, size);
+    cin >> key;
 
-    // Delete root (minimum)
-    deleteMin(heap, size);
+    int result = binarySearch(arr, n, key);
 
-    cout << "After deletion (Min Heap):\n";
-    display(heap, size);
+    if (result != -1)
+        cout << "Element found at index: " << result;
+    else
+        cout << "Element not found";
 
     return 0;
 }
