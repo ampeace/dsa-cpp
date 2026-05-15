@@ -15,7 +15,6 @@ cd dsa-cpp
 mkdir build && cd build
 cmake ..
 make
-```
 
 ## Usage
 Include headers and use the implementations in your projects.
